@@ -1,0 +1,30 @@
+version: '3'
+services:
+    web:
+        image: nginx:latest
+        ports:
+            - "80:80"
+
+        volumes:
+            - ./nginx.conf:/etc/nginx/conf.d/nginx.conf
+            - ./app:/app
+            - ./openssl.cnf:/etc/ssl/openssl.cnf
+        
+        depends_on: 
+          - php
+
+    php:
+        build:
+            context: .
+            dockerfile: PHP.Dockerfile
+        volumes:
+            - ./app:/app
+            - ./openssl.cnf:/etc/ssl/openssl.cnf
+
+    composer:
+        image: composer:latest
+        command: ["php", "composer.phar", "install"]
+        volumes:
+           - ./app/public:/app
+        depends_on:
+          - web

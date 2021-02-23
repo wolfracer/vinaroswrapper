@@ -1,0 +1,15 @@
+
+{
+    "name": "wolfracer/vinaroswrapper",
+    "description": "a simple wrapper to vinaros public-lighting API",
+    "authors": [
+        {
+            "name": "Fabian Cudis",
+            "email": "fabiancudisdev@gmail.com",
+            "role": "Developer"
+        }],
+    "require": {
+       "php": "^7.2.5",
+       "guzzlehttp/guzzle": "^7.0"
+    }
+}
