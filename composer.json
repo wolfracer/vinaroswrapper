@@ -2,6 +2,7 @@
 {
     "name": "wolfracer/vinaroswrapper",
     "description": "a simple wrapper to vinaros public-lighting API",
+    "license": "MIT",
     "authors": [
         {
             "name": "Fabian Cudis",
